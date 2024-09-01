@@ -1,4 +1,5 @@
-import moji from "moji";
+//import moji from "moji";
+import { moji } from "https://taisukef.github.io/moji/index.mjs";
 import { createCharChain } from "./char/char_chain.js";
 import { EmptyTextError } from "./error/empty_text_error.js";
 import { NoRemainingInputError } from "./error/no_remaining_input_error.js";
