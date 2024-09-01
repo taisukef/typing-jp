@@ -4,7 +4,7 @@ import { CharZenXtu } from "./char_zen_xtu.js";
 import { CharZenN } from "./char_zen_n.js";
 import { CharCreationError } from "../error/char_creation_error.js";
 
-export function createChar(name, priority) {
+export function createChar(name, priority, modeCasK = true) {
     switch (name) {
         // あ行 
         case "あ": return new CharZen(name, ["a"], priority);
@@ -31,16 +31,16 @@ export function createChar(name, priority) {
 
         // か行 
         case "か": return new CharZen(name, ["ka", "ca"], priority);
-        case "き": return new CharZen(name, ["ki"], priority);
+        case "き": return new CharZen(name, modeCasK ? ["ki", "ci"] : ["ki"], priority);
         case "く": return new CharZen(name, ["ku", "cu", "qu"], priority);
-        case "け": return new CharZen(name, ["ke"], priority);
+        case "け": return new CharZen(name, modeCasK ? ["ke", "ce"] : ["ke"], priority);
         case "こ": return new CharZen(name, ["ko", "co"], priority);
 
-        case "きゃ": return new CharZen(name, ["kya"], priority);
-        case "きぃ": return new CharZen(name, ["kyi"], priority);
-        case "きゅ": return new CharZen(name, ["kyu"], priority);
-        case "きぇ": return new CharZen(name, ["kye"], priority);
-        case "きょ": return new CharZen(name, ["kyo"], priority);
+        case "きゃ": return new CharZen(name, modeCasK ? ["kya", "cya"] : ["kya"], priority);
+        case "きぃ": return new CharZen(name, modeCasK ? ["kyi", "cyi"] : ["kyi"], priority);
+        case "きゅ": return new CharZen(name, modeCasK ? ["kyu", "cyu"] : ["kyu"], priority);
+        case "きぇ": return new CharZen(name, modeCasK ? ["kye", "cye"] : ["kye"], priority);
+        case "きょ": return new CharZen(name, modeCasK ? ["kyo", "cyo"] : ["kyo"], priority);
 
         case "くゃ": return new CharZen(name, ["qya"], priority);
         case "くゅ": return new CharZen(name, ["qyu"], priority);
@@ -75,9 +75,9 @@ export function createChar(name, priority) {
 
         // さ行 
         case "さ": return new CharZen(name, ["sa"], priority);
-        case "し": return new CharZen(name, ["si", "ci", "shi"], priority);
+        case "し": return new CharZen(name, modeCasK ? ["si", "shi"] : ["si", "ci", "shi"], priority);
         case "す": return new CharZen(name, ["su"], priority);
-        case "せ": return new CharZen(name, ["se", "ce"], priority);
+        case "せ": return new CharZen(name, modeCasK ? ["se"] : ["se", "ce"], priority);
         case "そ": return new CharZen(name, ["so"], priority);
 
         case "しゃ": return new CharZen(name, ["sya", "sha"], priority);
@@ -111,11 +111,11 @@ export function createChar(name, priority) {
         case "て": return new CharZen(name, ["te"], priority);
         case "と": return new CharZen(name, ["to"], priority);
 
-        case "ちゃ": return new CharZen(name, ["tya", "cha", "cya"], priority);
-        case "ちぃ": return new CharZen(name, ["tyi", "cyi"], priority);
-        case "ちゅ": return new CharZen(name, ["tyu", "chu", "cyu"], priority);
-        case "ちぇ": return new CharZen(name, ["tye", "che", "cye"], priority);
-        case "ちょ": return new CharZen(name, ["tyo", "cho", "cyo"], priority);
+        case "ちゃ": return new CharZen(name, modeCasK ? ["tya", "cha"] : ["tya", "cha", "cya"], priority);
+        case "ちぃ": return new CharZen(name, modeCasK ? ["tyi"] : ["tyi", "cyi"], priority);
+        case "ちゅ": return new CharZen(name, modeCasK ? ["tyu", "chu"] : ["tyu", "chu", "cyu"], priority);
+        case "ちぇ": return new CharZen(name, modeCasK ? ["tye", "che"] : ["tye", "che", "cye"], priority);
+        case "ちょ": return new CharZen(name, modeCasK ? ["tyo", "cho"] : ["tyo", "cho", "cyo"], priority);
 
         case "つぁ": return new CharZen(name, ["tsa"], priority);
         case "つぃ": return new CharZen(name, ["tsi"], priority);
