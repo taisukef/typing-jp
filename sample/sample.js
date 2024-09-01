@@ -1,3 +1,4 @@
+import { TypingText } from "../main.js";
 
 const domText = document.querySelector("#text");
 const domHiraText1 = document.querySelector("#hira-text1");
