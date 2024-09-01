@@ -5,6 +5,8 @@
 日本語のタイピングゲームの入力判定のためのライブラリです。  
 `sya, sha, sixya`のように複数あるローマ字入力にも対応しています。  
 
+[mogamoga1024/typing-jp](https://github.com/mogamoga1024/typing-jp)をforkして、Dvorakユーザー向けにカ行をCでも打てるように変更しています。[modeCasK in char_factory.js](https://github.com/taisukef/typing-jp/blob/esmodule_dvorak/src/char/char_factory.js#L7)  
+
 ## サンプル
 
 [タイピングゲーム](https://mogamoga1024.github.io/typing-jp/sample/sample.html)  
