@@ -107,38 +107,6 @@ if (TypingText.isValidInputKey(keyboardEvent.key) === false) {
 
 この眠くなるようなリファレンスを読むよりも[サンプルのプログラム](https://github.com/mogamoga1024/typing-jp/blob/main/sample/sample.js)を読んだ方が速く理解できると思います。
 
-- [typing-jp](#typing-jp)
-  - [これ is 何](#これ-is-何)
-  - [サンプル](#サンプル)
-  - [ダウンロード方法](#ダウンロード方法)
-    - [ESモジュールとして使いたい場合](#esモジュールとして使いたい場合)
-    - [ファイルが欲しい場合](#ファイルが欲しい場合)
-    - [CDNで使いたい場合](#cdnで使いたい場合)
-    - [npmで使いたい場合](#npmで使いたい場合)
-  - [ざっくりと説明](#ざっくりと説明)
-    - [1. まずはTypingTextオブジェクトを作る](#1-まずはtypingtextオブジェクトを作る)
-    - [2. 後は各自お好きなように](#2-後は各自お好きなように)
-  - [リファレンス：TypingTextクラス](#リファレンスtypingtextクラス)
-    - [TypingText(text\[, ignoreSpace, priority, modeCasK\])](#typingtexttext-ignorespace-priority-modecask)
-      - [備考1](#備考1)
-      - [備考2：priorityってなんやねん](#備考2priorityってなんやねん)
-    - [static isValidInputKey(key)](#static-isvalidinputkeykey)
-      - [引数](#引数)
-      - [戻り値](#戻り値)
-    - [inputKey(key\[, isCapsLock\])](#inputkeykey-iscapslock)
-      - [引数](#引数-1)
-      - [戻り値](#戻り値-1)
-      - [備考1](#備考1-1)
-      - [備考2：isCapsLockってなんやねん](#備考2iscapslockってなんやねん)
-    - [text](#text)
-    - [completedText](#completedtext)
-    - [remainingText](#remainingtext)
-    - [roman](#roman)
-    - [completedRoman](#completedroman)
-    - [remainingRoman](#remainingroman)
-  - [前世](#前世)
-  - [license](#license)
-
 ### TypingText(text[, ignoreSpace, priority, modeCasK])
 
 コンストラクタ
