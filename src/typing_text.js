@@ -53,13 +53,15 @@ export class TypingText {
         }
         else if (length === 3) {
             this.#init(args[0], args[1], args[2]);
+        }else if(length === 4){
+            this.#init(args[0], args[1], args[2], args[3]);
         }
         else {
             this.#init(); // エラーになるが別にいい。不正な入力なので。
         }
     }
 
-    #init(_text, ignoreSpace = true, priority = {}) {
+    #init(_text, ignoreSpace = true, priority = {}, modeCasK=true) {
         let tmpText = ignoreSpace ? _text.replace(/\s|　/g, "") : _text.replace(/\t\f\r\n/g, "");
         if (tmpText === "") {
             throw new EmptyTextError();
@@ -80,7 +82,7 @@ export class TypingText {
         // カタカタをひらがなに変換する
         this.#text = moji(this.#text).convert("HK", "ZK").convert("KK", "HG").toString();
         
-        this.char = createCharChain(this.#text, priority);
+        this.char = createCharChain(this.#text, priority, modeCasK);
         this.#remainingRoman = "";
 
         let tmpChar = this.char;

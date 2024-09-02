@@ -5,7 +5,9 @@
 日本語のタイピングゲームの入力判定のためのライブラリです。  
 `sya, sha, sixya`のように複数あるローマ字入力にも対応しています。  
 
-[mogamoga1024/typing-jp](https://github.com/mogamoga1024/typing-jp)をforkして、Dvorakユーザー向けにカ行をCでも打てるように変更しています。[modeCasK in char_factory.js](https://github.com/taisukef/typing-jp/blob/esmodule_dvorak/src/char/char_factory.js#L7)  
+[taisukef/typing-jp](https://github.com/taisukef/typing-jp)をforkして、カ行をCで打てるかをコンストラクタで指定できるように変更しています。
+[modeCasK in char_factory.js](https://github.com/Tamagosushio/typing-jp/blob/add-switch-dvorak/src/char/char_chain.js)  
+[modeCask in typing_text.js](https://github.com/Tamagosushio/typing-jp/blob/add-switch-dvorak/src/typing_text.js)
 
 ## サンプル
 
@@ -105,17 +107,7 @@ if (TypingText.isValidInputKey(keyboardEvent.key) === false) {
 
 この眠くなるようなリファレンスを読むよりも[サンプルのプログラム](https://github.com/mogamoga1024/typing-jp/blob/main/sample/sample.js)を読んだ方が速く理解できると思います。
 
-- [TypingText(text[, ignoreSpace, priority])](#typingtexttext-ignorespace-priority)
-- [static isValidInputKey(key)](#static-isvalidinputkeykey)
-- [inputKey(key[, isCapsLock])](#inputkeykey-iscapslock)
-- [text](#text)
-- [completedText](#completedText)
-- [remainingText](#remainingText)
-- [roman](#roman)
-- [completedRoman](#completedRoman)
-- [remainingRoman](#remainingRoman)
-
-### TypingText(text[, ignoreSpace, priority])
+### TypingText(text[, ignoreSpace, priority, modeCasK])
 
 コンストラクタ
 
@@ -124,6 +116,7 @@ if (TypingText.isValidInputKey(keyboardEvent.key) === false) {
 |text|string|タイピング対象のテキスト<br>「ひらがな、カタカナ、数字、英語、ASCIIで使われている記号」のみが使われている必要があります。(半角・全角は区別しない)|
 |ignoreSpace|boolean(省略可)|falseの場合、textから半角スペース、全角スペースが排除されます。trueの場合は何もしません。デフォルトはtrueです。|
 |priority|object(省略可)|textをローマ字に変換する時の優先順位を指定するオブジェクトです。詳しくは備考を参照してください。|
+|modeCasK|boolean(省略可)|falseの場合、カ行をcで打てなくなります。デフォルトはtrueです。|
 
 #### 備考1
 

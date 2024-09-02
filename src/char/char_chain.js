@@ -1,8 +1,8 @@
 import { createChar } from "./char_factory.js";
 
-export function createCharChain(text, priority) {
+export function createCharChain(text, priority, modeCasK = true) {
     if (text.length === 1) {
-        return createChar(text[0], priority);
+        return createChar(text[0], priority, modeCasK);
     }
 
     let firstChar = null;
@@ -20,15 +20,15 @@ export function createCharChain(text, priority) {
         }
 
         if (tmpName === null) {
-            char = createChar(name, priority);
+            char = createChar(name, priority, modeCasK);
         }
         else {
             try {
-                char = createChar(tmpName, priority);
+                char = createChar(tmpName, priority, modeCasK);
                 i++;
             }
             catch (e) {
-                char = createChar(name, priority);
+                char = createChar(name, priority, modeCasK);
             }
         }
 
@@ -44,11 +44,11 @@ export function createCharChain(text, priority) {
     return firstChar;
 };
 
-export function createDivisionCharChain(text, priority) {
+export function createDivisionCharChain(text, priority, modeCasK = true) {
     let firstChar = null;
     let preChar = null;
     for (let i = 0; i < text.length; i++) {
-        const char = createChar(text[i], priority);
+        const char = createChar(text[i], priority, modeCasK);
         if (i === 0) {
             firstChar = char;
         }
